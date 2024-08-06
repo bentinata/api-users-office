@@ -1,0 +1,5 @@
+services:
+  backend:
+    image: rest-api-hono
+    ports:
+      - "3000:3000"
