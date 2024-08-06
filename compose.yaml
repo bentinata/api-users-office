@@ -1,5 +1,7 @@
 services:
   backend:
+    # Prefer using build rather than tagged image name.
+    # As tagged image name is only available after we're building the image manually.
     image: rest-api-hono
     ports:
       - "3000:3000"

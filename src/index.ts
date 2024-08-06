@@ -5,6 +5,9 @@ const app = new Hono();
 interface UserData {
   id: number;
   name: string;
+  // Age is dynamic.
+  // Use static value to be stored with, in this case, born year.
+  // Calculate age during request handling.
   age: number;
   address: string;
   role: string;
