@@ -3,10 +3,14 @@ Task Project Day 25 Bearmentor:
 - Production: `https://restapihono.com`
 - Local: `http://localhost:3000`
 
-| Endpoint     | HTTP  | Description    |
-| ------------ | ----- | -------------- |
-| `/items`     | `GET` | Get all items  |
-| `/items/:id` | `GET` | Get item by id |
+| Endpoint        | HTTP     | Description           |
+| --------------- | -------- | --------------------- |
+| `/users`        | `GET`    | Get all users         |
+| `/users/:id`    | `GET`    | Get user by id        |
+| `/users/create` | `POST`   | Post/Create data user |
+| `/users`        | `DELETE` | Delete all data users |
+| `/users/:id`    | `DELETE` | Delete` user by id    |
+| `/users/:id`    | `PATCH`  | Patch/Edit user by id |
 
 Then send HTTP requests by using API clients such as:
 
