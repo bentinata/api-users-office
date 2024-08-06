@@ -1,7 +1,7 @@
 {
   "name": "rest-api-hono",
   "scripts": {
-    "dev": "tsx watch src/index.tsx"
+    "dev": "tsx watch src/index.ts"
   },
   "dependencies": {
     "@hono/node-server": "^1.12.0",
