@@ -9,7 +9,7 @@ Task Project Day 25 Bearmentor:
 | `/users/:id`    | `GET`    | Get user by id        |
 | `/users/create` | `POST`   | Post/Create data user |
 | `/users`        | `DELETE` | Delete all data users |
-| `/users/:id`    | `DELETE` | Delete` user by id    |
+| `/users/:id`    | `DELETE` | Delete user by id     |
 | `/users/:id`    | `PATCH`  | Patch/Edit user by id |
 
 Then send HTTP requests by using API clients such as:
