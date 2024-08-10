@@ -1,5 +1,23 @@
 services:
-  backend:
-    image: rest-api-hono
+  web:
+    build: .
     ports:
       - "3000:3000"
+    depends_on:
+      - database
+    # ceck network docker: docker network ls
+    # start postgres: docker compose up
+    # to connect
+    # docker run --rm -t -i --network(get network from docker network ls) postgres:alpine psql -h database -U brian brian
+    # docker run --rm -t -i --network rest-api-hono_default  postgres:alpine psql -h database -U brian brian
+  database:
+    image: postgres:alpine
+    ports:
+      - "5432:5432"
+    env_file:
+      - path: .env
+        required: true
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:
