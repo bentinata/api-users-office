@@ -39,6 +39,8 @@ let dataDummy: UserData[] = [
     role: "IT Support",
   },
 ];
+
+// REVIEW: Make use of z.infer to extract TypeScript interface from zod schema.
 const userSchema = z.object({
   id: z.number().min(1, "ID harus lebih besar dari 0"),
   name: z.string().min(1, "Nama tidak boleh kosong"),
@@ -53,6 +55,7 @@ const userSchema = z.object({
     ),
 });
 
+// REVIEW: Typo. Also, move it out to other files. Make it modular.
 const calcualteAge = (bornYear: number) => {
   const currentYear = new Date().getFullYear();
   return currentYear - bornYear;
@@ -75,6 +78,7 @@ app.get("/users/:id", (c) => {
   const id = parseInt(c.req.param("id"), 10);
   const usersById = dataDummy.find((data) => data.id === id);
 
+  // REVIEW: Try to use guard clause to simplify the code.
   if (usersById) {
     return c.json({
       message: "Success",
@@ -94,9 +98,10 @@ app.get("/users/:id", (c) => {
   }
 });
 
+// REVIEW: Should be just POST /users to be RESTful.
 // method POST add new data
-
 app.post("/users/create", async (c) => {
+  // REVIEW: try-catch here is not needed, because fail is catched by parsed.success anyway.
   try {
     const data = await c.req.json();
 
